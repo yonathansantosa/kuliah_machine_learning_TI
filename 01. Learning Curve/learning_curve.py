@@ -1,5 +1,9 @@
 
 def plot_training_curve(clf, X_train, y_train):
+    import numpy as np
+    from sklearn.model_selection import learning_curve
+    import matplotlib.pyplot as plt
+
     train_sizes, train_scores, test_scores = learning_curve(clf, X_train, y_train, scoring="accuracy")
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
